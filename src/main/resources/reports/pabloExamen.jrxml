@@ -3,7 +3,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pabloExamen" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a4ff5257-b43a-46c7-be0d-70c2899bd768">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="aprobar"/>
-	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+	<style name="Table_TH" mode="Opaque" backcolor="#7CFC00">
 		<box>
 			<pen lineWidth="0.5" lineColor="#000000"/>
 			<topPen lineWidth="0.5" lineColor="#000000"/>
@@ -12,7 +12,7 @@
 			<rightPen lineWidth="0.5" lineColor="#000000"/>
 		</box>
 	</style>
-	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+	<style name="Table_CH" mode="Opaque" backcolor="#7CFC00">
 		<box>
 			<pen lineWidth="0.5" lineColor="#000000"/>
 			<topPen lineWidth="0.5" lineColor="#000000"/>
@@ -29,12 +29,16 @@
 			<bottomPen lineWidth="0.5" lineColor="#000000"/>
 			<rightPen lineWidth="0.5" lineColor="#000000"/>
 		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#DEFEBF"/>
+		</conditionalStyle>
 	</style>
 	<subDataset name="Dataset1" uuid="434a1abd-f077-48dd-91d4-ffde00f13500">
 		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="aprobar"/>
 		<queryString language="SQL">
-			<![CDATA[SELECT id, nombre, apellido, AD, SGE, DI, PMDM, PSP, EIE, HLC, (AD + SGE + DI + PMDM + PSP + EIE + HLC)/7 AS media FROM alumno GROUP BY id]]>
+			<![CDATA[SELECT id, nombre, apellido, AD, SGE, DI, PMDM, PSP, EIE, HLC, ROUND((AD + SGE + DI + PMDM + PSP + EIE + HLC)/7, 3) AS media FROM alumno GROUP BY id]]>
 		</queryString>
 		<field name="id" class="java.lang.Integer">
 			<property name="com.jaspersoft.studio.field.label" value="id"/>
@@ -81,18 +85,22 @@
 		</field>
 	</subDataset>
 	<queryString language="SQL">
-		<![CDATA[SELECT id, nombre, apellido, AD, SGE, DI, PMDM, PSP, EIE, HLC, (AD + SGE + DI + PMDM + PSP + EIE + HLC)/7 AS media FROM alumno GROUP BY id]]>
+		<![CDATA[SELECT id, nombre, apellido, AD, SGE, DI, PMDM, PSP, EIE, HLC, ROUND((AD + SGE + DI + PMDM + PSP + EIE + HLC)/7, 3) AS media FROM alumno GROUP BY id]]>
 	</queryString>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch"/>
-	</title>
-	<pageHeader>
-		<band height="213" splitType="Stretch">
+		<band height="174" splitType="Stretch">
+			<staticText>
+				<reportElement x="150" y="0" width="260" height="30" uuid="adf866b8-184f-4d65-918c-6edae13ab021"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Comic Sans MS" size="20" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[LISTA DE ALUMNOS]]></text>
+			</staticText>
 			<componentElement>
-				<reportElement x="-10" y="13" width="580" height="67" uuid="0c50e520-f789-44a4-b099-6cdf77723939">
+				<reportElement x="-10" y="90" width="580" height="67" uuid="0c50e520-f789-44a4-b099-6cdf77723939">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
 					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
@@ -281,16 +289,7 @@
 				</jr:table>
 			</componentElement>
 		</band>
-	</pageHeader>
-	<columnHeader>
-		<band height="61" splitType="Stretch"/>
-	</columnHeader>
-	<detail>
-		<band height="125" splitType="Stretch"/>
-	</detail>
-	<columnFooter>
-		<band height="45" splitType="Stretch"/>
-	</columnFooter>
+	</title>
 	<pageFooter>
 		<band height="54" splitType="Stretch"/>
 	</pageFooter>

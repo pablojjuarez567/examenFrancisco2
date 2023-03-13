@@ -6,6 +6,7 @@ module com.example.examenjrfx {
     requires org.kordamp.bootstrapfx.core;
     requires com.almasb.fxgl.all;
     requires java.sql;
+    requires jasperreports;
 
     opens com.example.examenjrfx to javafx.fxml;
     exports com.example.examenjrfx;

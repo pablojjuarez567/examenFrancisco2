@@ -9,7 +9,7 @@ public class JDBCutils {
 
     static {
         //TODO: Cambiar el usuario y contraseña si es necesario
-        String url = "jdbc:mysql://localhost:3306/breakfast";
+        String url = "jdbc:mysql://localhost:3306/alumnado";
         String user = "root";
         String password = "root";
         try {
