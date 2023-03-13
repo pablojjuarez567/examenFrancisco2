@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+
+<BorderPane fx:controller="com.example.examenjrfx.HelloController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <TableView fx:id="tabla" prefHeight="400.0" prefWidth="437.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="tablaNombre" prefWidth="70.0" text="Nombre" />
+          <TableColumn fx:id="tablaApellidos" prefWidth="70.0" text="Apellidos" />
+            <TableColumn fx:id="tablaAD" minWidth="0.0" prefWidth="40.0" text="AD" />
+            <TableColumn fx:id="tablaSGE" prefWidth="40.0" text="SGE" />
+            <TableColumn fx:id="tablaDI" prefWidth="40.0" text="DI" />
+            <TableColumn fx:id="tablaPMDM" prefWidth="45.0" text="PMDM" />
+            <TableColumn fx:id="tablaPSP" prefWidth="40.0" text="PSP" />
+            <TableColumn fx:id="tablaEIE" prefWidth="40.0" text="EIE" />
+            <TableColumn fx:id="tablaHLC" prefWidth="40.0" text="HLC" />
+        </columns>
+      </TableView>
+   </center>
+   <right>
+      <GridPane alignment="TOP_RIGHT" prefHeight="400.0" prefWidth="174.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER" text="Nombre:" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Label alignment="CENTER" text="Apellidos:" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <Label text="AD:" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <Label text="DI:" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <Label text="SGE:" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+            <Label text="PMDM:" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+            <Label text="PSP:" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+            <Label text="EIE:" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+            <Label text="HLC:" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+            <TextField fx:id="textFieldNombre" GridPane.columnIndex="1" />
+            <TextField fx:id="textFieldApellido" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="textFieldAD" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="textFieldSGE" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="textFieldDI" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="textFieldPMDM" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="textFieldPSP" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextField fx:id="textFieldEIE" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <TextField fx:id="textFieldHLC" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Button fx:id="anadirAlumno" mnemonicParsing="false" onAction="#anadirAlumnoAction" text="Añadir" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="9">
+               <tooltip>
+                  <Tooltip text="Añadir al alumno a la tabla" />
+               </tooltip>
+            </Button>
+         </children>
+      </GridPane>
+   </right>
+   <bottom>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="157.99998474121094" minWidth="10.0" prefWidth="152.6666259765625" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="47.3333740234375" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.66668701171875" minWidth="10.0" prefWidth="134.66668701171875" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.00003051757812" minWidth="10.0" prefWidth="121.99997965494788" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.33331298828125" minWidth="10.0" prefWidth="43.999969482421875" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="media" text="Media:" GridPane.halignment="CENTER" />
+            <Label fx:id="modulosSuspensos" text="Modulos suspensos:" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+            <Button fx:id="descargarReport" mnemonicParsing="false" onAction="#descargarReportAction" text="Descargar notas" GridPane.columnIndex="3" GridPane.halignment="CENTER">
+               <tooltip>
+                  <Tooltip text="Descargar en un JasperReport todos los alumnos" />
+               </tooltip>
+            </Button>
+            <Button fx:id="salir" mnemonicParsing="false" onAction="#salirAction" text="Salir" GridPane.columnIndex="4" GridPane.halignment="CENTER">
+               <tooltip>
+                  <Tooltip text="Salir de la aplicación" />
+               </tooltip>
+            </Button>
+         </children>
+      </GridPane>
+   </bottom>
+</BorderPane>
